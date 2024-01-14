@@ -1,0 +1,31 @@
+version: "3"
+services:
+  app:
+    build: ./
+    container_name: RestApi-app
+    ports:
+      - 8081:8081
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/restApi
+      SPRING_DATASOURCE_PASSWORD: 090Abc.tee
+      SPRING_DATASOURCE_USERNAME: postgres
+    depends_on:
+      - db
+    networks:
+      - rest-api
+
+  db:
+    image: postgres:latest
+    container_name: postgresDB
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: 090Abc.tee
+      POSTGRES_DB: restApi
+    networks:
+      - rest-api
+
+networks:
+  rest-api:
+    driver: bridge

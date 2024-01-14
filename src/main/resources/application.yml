@@ -1,0 +1,29 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: <CLIENT-ID>
+            client-secret: <CLIENT-SECRET>
+  datasource:
+    username: postgres
+    password: 090Abc.tee
+    url: jdbc:postgresql://localhost:5432/restApi
+  jpa:
+    hibernate:
+      ddl-auto: update
+      # Add the following in your application.properties or application.yml
+#      logging:
+#        level:
+#          org.hibernate.SQL=DEBUG
+#          logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+#        logging:
+#          level:
+#            org.springframework.web.servlet.handler.HandlerMappingIntrospector: TRACE
+server:
+  port: 8081
+sha512:
+  string: dbbefc5da224a3a26811c6812ab2e41af693f6399240947053e8907a3dfcf0d03c840e2e699d4e2d237f83eb838d5f6863626cea0bc25a5a87694b7d4f8bf7ea
+CLIENT:
+  ID: <CLIENT-ID>
